@@ -12,7 +12,7 @@ let startBtn = document.getElementById('start'),
     expensesBtn =         document.getElementsByTagName('button')[0],
     optionalExpensesBtn = document.getElementsByTagName('button')[1],
     countBtn =            document.getElementsByTagName('button')[2],
-    optionalExpensesItem = document.querySelectorAll('optionalexpenses-item'),
+    optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
 
 
     incomeItem = document.querySelector('.choose-income'),
@@ -61,13 +61,15 @@ expensesBtn.addEventListener('click',function(){
     expensesValue.textContent = sum;
 });
 
-optionalExpensesBtn.addEventListener('click',function(){
+optionalExpensesBtn.addEventListener('click', function(){
     for (let i = 0; i < optionalExpensesItem.length; i++){
         let opt = optionalExpensesItem[i].value;
-        appData.optionalExpenses[i] = opt;
+        
+        appData.optionalExpenses[i] =opt;
+        
         optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
 
-    }
+    };
 });
 
 countBtn.addEventListener('click',function(){
@@ -135,7 +137,7 @@ let appData = {
 
     budget: money,
     expenses: {},
-    optionExpenses: {},
+    optionalExpenses: {},
     income: [],
     timeData: time,
     savings: false,
